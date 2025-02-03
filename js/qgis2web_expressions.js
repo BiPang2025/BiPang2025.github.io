@@ -754,30 +754,3 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
-
-
-
-function exp_label_KECAMATAN_2_eval_expression(context) {
-    // upper(Kecamatan)
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return fnc_upper([feature.properties['Kecamatan'] ], context);
-    } else {
-        return fnc_upper([feature['Kecamatan'] ], context);
-    }
-}
-
-
-function exp_label_KELURAHAN_3_eval_expression(context) {
-    // Desa + '\n' + ID_YK2
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return ((feature.properties['Desa']  + '\n') + feature.properties['ID_YK2'] );
-    } else {
-        return ((feature['Desa']  + '\n') + feature['ID_YK2'] );
-    }
-}
